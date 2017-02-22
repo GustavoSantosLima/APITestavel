@@ -1,4 +1,4 @@
-import BooksController from '../controllers/books'
+import BooksController from '../controllers/books';
 
 export default (app, Books) => {
     app.route('/books').get((req, res) => {
@@ -24,4 +24,4 @@ export default (app, Books) => {
             .then(() => res.sendStatus(204))
             .catch(() => res.status(412));
     });
-}
+};
