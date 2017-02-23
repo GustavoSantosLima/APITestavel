@@ -35,10 +35,10 @@ describe('Controllers: Books', () => {
                 updated_at: '2017-02-22T17:00:00.69ZZ',
             }];
 
-            td.when(Books.findOne({ where: {id: 1} })).thenResolve(expectedResponse);
+            td.when(Books.findOne({ where: { id: 1 } })).thenResolve(expectedResponse);
 
             const booksController = new BooksController(Books);
-            return booksController.getById({id: 1})
+            return booksController.getById({ id: 1 })
                 .then(response => expect(response.data).to.be.eql(expectedResponse));
         });
     });
@@ -50,7 +50,7 @@ describe('Controllers: Books', () => {
             };
 
             const requestBody = {
-                name: 'Test Book'
+                name: 'Test Book',
             };
 
             const expectedResponse = [{
@@ -64,7 +64,7 @@ describe('Controllers: Books', () => {
 
             const booksController = new BooksController(Books);
             return booksController.create(requestBody)
-                .then(response => {
+                .then((response) => {
                     expect(response.statusCode).to.be.eql(201);
                     expect(response.data).to.be.eql(expectedResponse);
                 });
@@ -79,7 +79,7 @@ describe('Controllers: Books', () => {
 
             const requestBody = {
                 id: 2,
-                name: 'Update Book'
+                name: 'Update Book',
             };
 
             const expectedResponse = [{
@@ -89,10 +89,10 @@ describe('Controllers: Books', () => {
                 updated_at: '2017-02-22T17:00:00.69ZZ',
             }];
 
-            td.when(Books.update(requestBody, { where: {id: 1} })).thenResolve(expectedResponse);
+            td.when(Books.update(requestBody, { where: { id: 1 } })).thenResolve(expectedResponse);
 
             const booksController = new BooksController(Books);
-            return booksController.update(requestBody, {id: 1})
+            return booksController.update(requestBody, { id: 1 })
                 .then(response => expect(response.data).to.be.eql(expectedResponse));
         });
     });
@@ -103,10 +103,10 @@ describe('Controllers: Books', () => {
                 destroy: td.function(),
             };
 
-            td.when(Books.destroy({ where: {id: 1} })).thenResolve({});
+            td.when(Books.destroy({ where: { id: 1 } })).thenResolve({});
 
             const booksController = new BooksController(Books);
-            return booksController.delete({id: 1})
+            return booksController.delete({ id: 1 })
                 .then(response => expect(response.statusCode).to.be.eql(204));
         });
     });

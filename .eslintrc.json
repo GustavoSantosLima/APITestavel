@@ -9,6 +9,9 @@
     "request": true,
     "app": true,
     "it": true,
+    "td": true,
+    "Joi": true,
+    "joiAssert": true,
     "beforeEach": true
   }
 }
