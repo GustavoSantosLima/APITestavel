@@ -10,5 +10,5 @@ export default {
         },
     },
     jwtSecret: 'fdgdxsuglhismsvtrhre',
-    jwtSession: {session: false},
+    jwtSession: { session: false },
 };
