@@ -1,10 +1,15 @@
+/**
+ * Configuração do BD
+ * Informações de acesso ao BD e o dialeto ex: mysql, sqlite, mongoDB, etc.
+ */
+
 export default {
-    database: 'books',
+    database: '',
     username: '',
     password: '',
     params: {
-        dialect: 'sqlite',
-        storage: `${process.env.NODE_ENV}_books.sqlite`,
+        dialect: '',
+        storage: '',
         define: {
             underscored: true,
         },
